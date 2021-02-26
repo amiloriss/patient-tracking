@@ -22,3 +22,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.btn-selected {
+    border-bottom: 3px solid #32a1e9 !important;
+    color: #32a1e9 !important;
+}
