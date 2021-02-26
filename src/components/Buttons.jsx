@@ -1,9 +1,9 @@
 import React from 'react';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux';
 
-import {getPresentPatient, getQuitingPatient} from '../action/getData'
+import { getPresentPatient, getQuitingPatient } from '../action/getData';
 
-const Buttons = ({display, getPresentPatient, getQuitingPatient}) => {
+const Buttons = ({ display, getPresentPatient, getQuitingPatient }) => {
     return (
         <>
             <button
@@ -22,23 +22,24 @@ const Buttons = ({display, getPresentPatient, getQuitingPatient}) => {
     );
 };
 
-const mapStateToProps = (state)=>{
+const mapStateToProps = (state) => {
     console.log(state);
     return {
-
-        display: state.display
-    }
-}
+        display: state.display,
+    };
+};
 
 const btnStyle = {
     border: 'none',
     fontSize: '16px',
     fontWeight: '100',
     textTransform: 'uppercase',
-    padding: '0 5px',
     cursor: 'pointer',
     padding: '10px',
     backgroundColor: 'initial',
 };
 
-export default connect(mapStateToProps, {getPresentPatient, getQuitingPatient}) (Buttons);
+export default connect(mapStateToProps, {
+    getPresentPatient,
+    getQuitingPatient,
+})(Buttons);

@@ -8,7 +8,7 @@ import QuittingPatient from './QuittingPatient';
 
 const PatientTable = ({ display, presentPatient, quittingPatient }) => {
     return (
-        <TableContainer style={{ height: '94.05%', overflow: 'scroll' }}>
+        <TableContainer style={{ height: '93.5%', overflow: 'scroll' }}>
             {display === 'present' && (
                 <PresentPatient presentPatient={presentPatient} />
             )}

@@ -8,13 +8,11 @@ const RightSide = () => {
     return (
         <Paper square>
             <div style={{ backgroundColor: '#f5f5f5' }}>
-                <Buttons/>
+                <Buttons />
             </div>
-            <PatientTable/>
+            <PatientTable />
         </Paper>
     );
 };
-
-
 
 export default RightSide;

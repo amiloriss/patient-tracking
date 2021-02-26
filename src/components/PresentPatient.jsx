@@ -7,7 +7,7 @@ import {
     TableRow,
 } from '@material-ui/core';
 
-const PresentPatient = ({presentPatient}) => {
+const PresentPatient = ({ presentPatient }) => {
     return (
         <Table>
             <TableHead>
@@ -19,16 +19,14 @@ const PresentPatient = ({presentPatient}) => {
             </TableHead>
             <TableBody>
                 {presentPatient.map((patient) => (
-                    <TableRow key={patient.historyNumber}>
+                    <TableRow
+                        onClick={(e) => console.log(e)}
+                        key={patient.historyNumber}>
                         <TableCell component='th' scope='row'>
                             {patient.historyNumber}
                         </TableCell>
-                        <TableCell align='left'>
-                            {patient.firstName}
-                        </TableCell>
-                        <TableCell align='left'>
-                            {patient.bedNumber}
-                        </TableCell>
+                        <TableCell align='left'>{patient.firstName}</TableCell>
+                        <TableCell align='left'>{patient.bedNumber}</TableCell>
                     </TableRow>
                 ))}
             </TableBody>

@@ -7,7 +7,7 @@ import {
     TableRow,
 } from '@material-ui/core';
 
-const QuitingPatient = ({quittingPatient}) => {
+const QuitingPatient = ({ quittingPatient }) => {
     return (
         <Table>
             <TableHead>
@@ -23,12 +23,8 @@ const QuitingPatient = ({quittingPatient}) => {
                         <TableCell component='th' scope='row'>
                             {patient.historyNumber}
                         </TableCell>
-                        <TableCell align='left'>
-                            {patient.firstName}
-                        </TableCell>
-                        <TableCell align='left'>
-                            {patient.cause}
-                        </TableCell>
+                        <TableCell align='left'>{patient.firstName}</TableCell>
+                        <TableCell align='left'>{patient.cause}</TableCell>
                     </TableRow>
                 ))}
             </TableBody>
