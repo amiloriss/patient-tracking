@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Paper } from '@material-ui/core';
 
+import PatientTable from './PatientTable'
+
 const RightSide = () => {
     const [display, setDisplay] = useState('present');
     return (
@@ -19,7 +21,7 @@ const RightSide = () => {
                     выбывшие
                 </button>
             </div>
-            parp
+            <PatientTable/>
         </Paper>
     );
 };
