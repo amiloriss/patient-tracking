@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { getAge } from '../ageCalculating';
+
 const PatientInformation = ({ FIO, age, diagnosis }) => {
 	return (
 		<div>
@@ -25,7 +27,7 @@ const PatientInformation = ({ FIO, age, diagnosis }) => {
 						borderBottom: '1px solid #000',
 					}}
 				>
-					{age}
+					{getAge(age)}
 				</div>
 			</div>
 			<div style={{ margin: '15px 0 15px 10px' }}>
