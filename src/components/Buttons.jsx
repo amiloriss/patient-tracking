@@ -26,7 +26,7 @@ const Buttons = ({ display, getPresentPatient, getQuittingPatient }) => {
 
 const mapStateToProps = state => {
 	return {
-		display: state.display,
+		display: state.getPatientReducer.display,
 	};
 };
 

@@ -20,9 +20,9 @@ const PatientTable = ({ display, presentPatient, quittingPatient }) => {
 };
 
 const mapStateToProps = state => ({
-	presentPatient: state.presentPatient,
-	quittingPatient: state.quittingPatient,
-	display: state.display,
+	presentPatient: state.getPatientReducer.presentPatient,
+	quittingPatient: state.getPatientReducer.quittingPatient,
+	display: state.getPatientReducer.display,
 });
 
 export default connect(mapStateToProps)(PatientTable);
