@@ -1,14 +1,13 @@
-import presentPatient from '../data/presentList.json';
-import quittingPatient from '../data/quittingList.json';
-
 import {
 	GET_ADDITIONAL_PRESENT,
 	GET_ADDITIONAL_QUITTING,
+	SET_PRESENT_PATIENT,
+	SET_QUITTING_PATIENT,
 } from '../action/type';
 
 const initialState = {
-	presentPatient,
-	quittingPatient,
+	presentPatient: null,
+	quittingPatient: null,
 	FIO: null,
 	age: null,
 	diagnosis: null,
@@ -16,6 +15,16 @@ const initialState = {
 
 export default (state = initialState, action) => {
 	switch (action.type) {
+		case SET_PRESENT_PATIENT:
+			return {
+				...state,
+				presentPatient: action.payload,
+			};
+		case SET_QUITTING_PATIENT:
+			return {
+				...state,
+				quittingPatient: action.payload,
+			};
 		case GET_ADDITIONAL_PRESENT:
 			return {
 				...state,
