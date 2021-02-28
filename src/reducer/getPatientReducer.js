@@ -11,7 +11,7 @@ const initialState = {
 	display: 'present',
 };
 
-export default (state = initialState, action) => {
+const getPatientReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case SET_PRESENT_PATIENT:
 			return {
@@ -39,3 +39,5 @@ export default (state = initialState, action) => {
 			return state;
 	}
 };
+
+export default getPatientReducer;

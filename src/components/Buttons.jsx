@@ -15,14 +15,14 @@ const Buttons = ({
 			<button
 				onClick={() => getPresentPatient()}
 				style={btnStyle}
-				className={display === 'present' && 'btn-selected'}
+				className={(display === 'present' && 'btn-selected').toString()}
 			>
 				присутствуют ({amountPresentPatient})
 			</button>
 			<button
 				onClick={() => getQuittingPatient()}
 				style={btnStyle}
-				className={display === 'quitting' && 'btn-selected'}
+				className={(display === 'quitting' && 'btn-selected').toString()}
 			>
 				выбывшие ({amountQuittingPatient})
 			</button>

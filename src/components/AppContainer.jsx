@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Container } from '@material-ui/core';
 import Split from 'react-split';
+import { LinearProgress } from '@material-ui/core';
 
 import { getData } from '../action/getData';
 
@@ -15,10 +16,10 @@ const AppContainer = ({ presentPatient, quittingPatient, getData }) => {
 	}, []);
 
 	if (presentPatient === null || quittingPatient === null) {
-		return <h1>It's not good</h1>;
+		return <LinearProgress />;
 	} else
 		return (
-			<Container style={{ height: '700px' }} maxWidth='xl'>
+			<Container style={{ height: '700px', padding: '20px' }} maxWidth='xl'>
 				<Split style={{ height: '100%', display: 'flex' }} sizes={[50, 50]}>
 					<LeftSide />
 					<RightSide />

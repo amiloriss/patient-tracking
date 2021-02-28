@@ -13,7 +13,7 @@ const initialState = {
 	diagnosis: null,
 };
 
-export default (state = initialState, action) => {
+const getAdditionalInfoReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case SET_PRESENT_PATIENT:
 			return {
@@ -55,3 +55,5 @@ export default (state = initialState, action) => {
 			return state;
 	}
 };
+
+export default getAdditionalInfoReducer;

@@ -1,30 +1,29 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    padding: 20px 0;
-    background-color: rgb(242, 242, 242);
+	background-color: rgb(242, 242, 242);
 }
 
 .gutter {
-    position: relative;
-    cursor: pointer;
+	position: relative;
+	cursor: pointer;
 }
 
 .gutter::before {
-    content: url('./assets/menu.png');
-    opacity: 0.5;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+	content: url('./assets/menu.png');
+	opacity: 0.5;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .btn-selected {
-    border-bottom: 3px solid #32a1e9 !important;
-    color: #32a1e9 !important;
+	border-bottom: 3px solid #32a1e9 !important;
+	color: #32a1e9 !important;
 }

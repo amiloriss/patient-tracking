@@ -27,7 +27,7 @@ const PatientInformation = ({ FIO, age, diagnosis }) => {
 						borderBottom: '1px solid #000',
 					}}
 				>
-					{getAge(age)}
+					{age && getAge(age)}
 				</div>
 			</div>
 			<div style={{ margin: '15px 0 15px 10px' }}>
