@@ -1,6 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const PatientInformation = () => {
+const PatientInformation = ({ FIO, age, diagnosis }) => {
 	return (
 		<div>
 			<div style={{ margin: '15px 0 15px 10px' }}>
@@ -12,7 +13,7 @@ const PatientInformation = () => {
 						borderBottom: '1px solid #000',
 					}}
 				>
-					fsda
+					{FIO}
 				</div>
 			</div>
 			<div style={{ margin: '15px 0 15px 10px' }}>
@@ -24,7 +25,7 @@ const PatientInformation = () => {
 						borderBottom: '1px solid #000',
 					}}
 				>
-					fsda
+					{age}
 				</div>
 			</div>
 			<div style={{ margin: '15px 0 15px 10px' }}>
@@ -36,11 +37,17 @@ const PatientInformation = () => {
 						borderBottom: '1px solid #000',
 					}}
 				>
-					fsda
+					{diagnosis}
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default PatientInformation;
+const mapStateToProps = state => ({
+	FIO: state.getAdditionalInfoReducer.FIO,
+	age: state.getAdditionalInfoReducer.age,
+	diagnosis: state.getAdditionalInfoReducer.diagnosis,
+});
+
+export default connect(mapStateToProps)(PatientInformation);

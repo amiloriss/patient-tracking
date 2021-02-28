@@ -13,10 +13,12 @@ export const getQuittingPatient = () => ({
 	type: GET_QUITING_PATIENT,
 });
 
-export const getPresentAdditionalInfo = () => ({
+export const getPresentAdditionalInfo = patientNumber => ({
 	type: GET_ADDITIONAL_PRESENT,
+	payload: patientNumber,
 });
 
-export const getQuittingAdditionalInfo = () => ({
+export const getQuittingAdditionalInfo = patientNumber => ({
 	type: GET_ADDITIONAL_QUITTING,
+	payload: patientNumber,
 });

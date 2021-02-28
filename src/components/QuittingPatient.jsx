@@ -7,7 +7,10 @@ import {
 	TableRow,
 } from '@material-ui/core';
 
-const QuitingPatient = ({ quittingPatient }) => {
+import { connect } from 'react-redux';
+import { getQuittingAdditionalInfo } from '../action/getData';
+
+const QuitingPatient = ({ quittingPatient, getQuittingAdditionalInfo }) => {
 	return (
 		<Table>
 			<TableHead>
@@ -21,7 +24,7 @@ const QuitingPatient = ({ quittingPatient }) => {
 				{quittingPatient.map(patient => (
 					<TableRow
 						onClick={e =>
-							console.log(
+							getQuittingAdditionalInfo(
 								+e.currentTarget.firstElementChild.firstChild.nodeValue
 							)
 						}
@@ -40,4 +43,4 @@ const QuitingPatient = ({ quittingPatient }) => {
 	);
 };
 
-export default QuitingPatient;
+export default connect(null, { getQuittingAdditionalInfo })(QuitingPatient);

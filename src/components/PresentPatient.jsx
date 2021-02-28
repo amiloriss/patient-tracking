@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
 	Table,
 	TableBody,
@@ -7,7 +7,10 @@ import {
 	TableRow,
 } from '@material-ui/core';
 
-const PresentPatient = ({ presentPatient }) => {
+import { connect } from 'react-redux';
+import { getPresentAdditionalInfo } from '../action/getData';
+
+const PresentPatient = ({ presentPatient, getPresentAdditionalInfo }) => {
 	return (
 		<Table>
 			<TableHead>
@@ -20,11 +23,11 @@ const PresentPatient = ({ presentPatient }) => {
 			<TableBody>
 				{presentPatient.map(patient => (
 					<TableRow
-						onClick={e =>
-							console.log(
+						onClick={e => {
+							getPresentAdditionalInfo(
 								+e.currentTarget.firstElementChild.firstChild.nodeValue
-							)
-						}
+							);
+						}}
 						style={{ cursor: 'pointer' }}
 						key={patient.historyNumber}
 					>
@@ -40,4 +43,4 @@ const PresentPatient = ({ presentPatient }) => {
 	);
 };
 
-export default PresentPatient;
+export default connect(null, { getPresentAdditionalInfo })(PresentPatient);
