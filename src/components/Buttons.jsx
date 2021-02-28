@@ -4,42 +4,43 @@ import { connect } from 'react-redux';
 import { getPresentPatient, getQuitingPatient } from '../action/getData';
 
 const Buttons = ({ display, getPresentPatient, getQuitingPatient }) => {
-    return (
-        <>
-            <button
-                onClick={() => getPresentPatient()}
-                style={btnStyle}
-                className={display === 'present' && 'btn-selected'}>
-                присутствуют
-            </button>
-            <button
-                onClick={() => getQuitingPatient()}
-                style={btnStyle}
-                className={display === 'quitting' && 'btn-selected'}>
-                выбывшие
-            </button>
-        </>
-    );
+	return (
+		<>
+			<button
+				onClick={() => getPresentPatient()}
+				style={btnStyle}
+				className={display === 'present' && 'btn-selected'}
+			>
+				присутствуют
+			</button>
+			<button
+				onClick={() => getQuitingPatient()}
+				style={btnStyle}
+				className={display === 'quitting' && 'btn-selected'}
+			>
+				выбывшие
+			</button>
+		</>
+	);
 };
 
-const mapStateToProps = (state) => {
-    console.log(state);
-    return {
-        display: state.display,
-    };
+const mapStateToProps = state => {
+	return {
+		display: state.display,
+	};
 };
 
 const btnStyle = {
-    border: 'none',
-    fontSize: '16px',
-    fontWeight: '100',
-    textTransform: 'uppercase',
-    cursor: 'pointer',
-    padding: '10px',
-    backgroundColor: 'initial',
+	border: 'none',
+	fontSize: '16px',
+	fontWeight: '100',
+	textTransform: 'uppercase',
+	cursor: 'pointer',
+	padding: '10px',
+	backgroundColor: 'initial',
 };
 
 export default connect(mapStateToProps, {
-    getPresentPatient,
-    getQuitingPatient,
+	getPresentPatient,
+	getQuitingPatient,
 })(Buttons);
