@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getPresentPatient, getQuitingPatient } from '../action/getData';
+import { getPresentPatient, getQuittingPatient } from '../action/getData';
 
-const Buttons = ({ display, getPresentPatient, getQuitingPatient }) => {
+const Buttons = ({ display, getPresentPatient, getQuittingPatient }) => {
 	return (
 		<>
 			<button
@@ -14,7 +14,7 @@ const Buttons = ({ display, getPresentPatient, getQuitingPatient }) => {
 				присутствуют
 			</button>
 			<button
-				onClick={() => getQuitingPatient()}
+				onClick={() => getQuittingPatient()}
 				style={btnStyle}
 				className={display === 'quitting' && 'btn-selected'}
 			>
@@ -42,5 +42,5 @@ const btnStyle = {
 
 export default connect(mapStateToProps, {
 	getPresentPatient,
-	getQuitingPatient,
+	getQuittingPatient,
 })(Buttons);

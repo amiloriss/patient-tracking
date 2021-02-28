@@ -7,8 +7,7 @@ import {
 	TableRow,
 } from '@material-ui/core';
 
-const PresentPatient = ({ presentPatient, clickHandler }) => {
-	const [isTargeted, setIsTargeted] = useState(false);
+const PresentPatient = ({ presentPatient }) => {
 	return (
 		<Table>
 			<TableHead>
