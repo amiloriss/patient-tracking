@@ -3,7 +3,13 @@ import { connect } from 'react-redux';
 
 import { getPresentPatient, getQuittingPatient } from '../action/getData';
 
-const Buttons = ({ display, getPresentPatient, getQuittingPatient }) => {
+const Buttons = ({
+	display,
+	getPresentPatient,
+	getQuittingPatient,
+	amountPresentPatient,
+	amountQuittingPatient,
+}) => {
 	return (
 		<>
 			<button
@@ -11,14 +17,14 @@ const Buttons = ({ display, getPresentPatient, getQuittingPatient }) => {
 				style={btnStyle}
 				className={display === 'present' && 'btn-selected'}
 			>
-				присутствуют
+				присутствуют ({amountPresentPatient})
 			</button>
 			<button
 				onClick={() => getQuittingPatient()}
 				style={btnStyle}
 				className={display === 'quitting' && 'btn-selected'}
 			>
-				выбывшие
+				выбывшие ({amountQuittingPatient})
 			</button>
 		</>
 	);
@@ -27,6 +33,8 @@ const Buttons = ({ display, getPresentPatient, getQuittingPatient }) => {
 const mapStateToProps = state => {
 	return {
 		display: state.getPatientReducer.display,
+		amountPresentPatient: state.getPatientReducer.presentPatient.length,
+		amountQuittingPatient: state.getPatientReducer.quittingPatient.length,
 	};
 };
 

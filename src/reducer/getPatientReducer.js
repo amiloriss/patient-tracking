@@ -12,9 +12,9 @@ const initialState = {
 export default (state = initialState, action) => {
 	switch (action.type) {
 		case GET_PRESENT_PATIENT:
-			return { presentPatient, display: 'present' };
+			return { ...state, presentPatient, display: 'present' };
 		case GET_QUITING_PATIENT:
-			return { quittingPatient, display: 'quitting' };
+			return { ...state, quittingPatient, display: 'quitting' };
 		default:
 			return state;
 	}
