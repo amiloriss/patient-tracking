@@ -24,7 +24,8 @@ const AppContainer = ({ presentPatient, quittingPatient, getData }) => {
                 maxWidth='xl'>
                 <Split
                     style={{ height: '100%', display: 'flex' }}
-                    sizes={[50, 50]}>
+                    minSize={[250,500]}
+                    sizes={[50, 50]} >
                     <LeftSide />
                     <RightSide />
                 </Split>
