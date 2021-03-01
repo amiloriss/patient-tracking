@@ -3,6 +3,8 @@ import { Paper } from '@material-ui/core';
 
 import PatientInformation from './PatientInformation';
 
+// more info about patient
+
 const LeftSide = () => {
     return (
         <Paper square>

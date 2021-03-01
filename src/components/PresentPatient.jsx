@@ -10,6 +10,8 @@ import {
 import { connect } from 'react-redux';
 import { getPresentAdditionalInfo } from '../action/getData';
 
+// list of present patient category
+
 const PresentPatient = ({
     presentPatient,
     getPresentAdditionalInfo,

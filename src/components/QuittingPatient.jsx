@@ -10,6 +10,8 @@ import {
 import { connect } from 'react-redux';
 import { getQuittingAdditionalInfo } from '../action/getData';
 
+// list of qutting patient category
+
 const QuitingPatient = ({
     quittingPatient,
     getQuittingAdditionalInfo,

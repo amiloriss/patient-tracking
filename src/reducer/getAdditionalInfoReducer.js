@@ -14,6 +14,8 @@ const initialState = {
     diagnosis: null,
 };
 
+// reducer to work with patient in a right side to more information about patient you choose
+
 const getAdditionalInfoReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_PRESENT_PATIENT:

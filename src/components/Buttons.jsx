@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { getPresentPatient, getQuittingPatient } from '../action/getData';
 
+// buttons to toggle between two patient category
+
 const Buttons = ({
     display,
     getPresentPatient,

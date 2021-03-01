@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { getAge } from '../ageCalculating';
 
+// take info from global state and put in left side of app
+
 const PatientInformation = ({ FIO, age, diagnosis }) => {
     return (
         <div>
@@ -29,6 +31,7 @@ const PatientInformation = ({ FIO, age, diagnosis }) => {
                         width: '150px',
                         borderBottom: '1px solid #000',
                     }}>
+                        {/* function that translate date into age */}
                     {age && getAge(age)}
                 </div>
             </div>

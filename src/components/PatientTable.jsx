@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import PresentPatient from './PresentPatient';
 import QuittingPatient from './QuittingPatient';
 
+// table of two patient category
+
 const PatientTable = ({ display, presentPatient, quittingPatient }) => {
     return (
         <TableContainer style={{ height: '92.5%', overflowY: 'scroll' }}>
