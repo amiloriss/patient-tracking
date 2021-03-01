@@ -10,7 +10,11 @@ import {
 import { connect } from 'react-redux';
 import { getPresentAdditionalInfo } from '../action/getData';
 
-const PresentPatient = ({ presentPatient, getPresentAdditionalInfo }) => {
+const PresentPatient = ({
+    presentPatient,
+    getPresentAdditionalInfo,
+    number,
+}) => {
     return (
         <Table>
             <TableHead>
@@ -29,7 +33,14 @@ const PresentPatient = ({ presentPatient, getPresentAdditionalInfo }) => {
                                     .nodeValue
                             );
                         }}
-                        style={{ cursor: 'pointer' }}
+                        style={{
+                            cursor: 'pointer',
+                            backgroundColor:
+                                number === patient.historyNumber && '#f5f5f5',
+                            borderLeft:
+                                number === patient.historyNumber &&
+                                '7px solid #32a1e9',
+                        }}
                         key={patient.historyNumber}>
                         <TableCell component='th' scope='row'>
                             {patient.historyNumber}
@@ -43,4 +54,10 @@ const PresentPatient = ({ presentPatient, getPresentAdditionalInfo }) => {
     );
 };
 
-export default connect(null, { getPresentAdditionalInfo })(PresentPatient);
+const mapStateToProps = (state) => ({
+    number: state.getAdditionalInfoReducer.number,
+});
+
+export default connect(mapStateToProps, { getPresentAdditionalInfo })(
+    PresentPatient
+);

@@ -10,7 +10,11 @@ import {
 import { connect } from 'react-redux';
 import { getQuittingAdditionalInfo } from '../action/getData';
 
-const QuitingPatient = ({ quittingPatient, getQuittingAdditionalInfo }) => {
+const QuitingPatient = ({
+    quittingPatient,
+    getQuittingAdditionalInfo,
+    number,
+}) => {
     return (
         <Table>
             <TableHead>
@@ -29,7 +33,14 @@ const QuitingPatient = ({ quittingPatient, getQuittingAdditionalInfo }) => {
                                     .nodeValue
                             )
                         }
-                        style={{ cursor: 'pointer' }}
+                        style={{
+                            cursor: 'pointer',
+                            backgroundColor:
+                                number === patient.historyNumber && '#f5f5f5',
+                            borderLeft:
+                                number === patient.historyNumber &&
+                                '7px solid #32a1e9',
+                        }}
                         key={patient.historyNumber}>
                         <TableCell component='th' scope='row'>
                             {patient.historyNumber}
@@ -43,4 +54,10 @@ const QuitingPatient = ({ quittingPatient, getQuittingAdditionalInfo }) => {
     );
 };
 
-export default connect(null, { getQuittingAdditionalInfo })(QuitingPatient);
+const mapStateToProps = (state) => ({
+    number: state.getAdditionalInfoReducer.number,
+});
+
+export default connect(mapStateToProps, { getQuittingAdditionalInfo })(
+    QuitingPatient
+);
